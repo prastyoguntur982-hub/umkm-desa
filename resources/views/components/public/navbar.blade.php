@@ -117,7 +117,7 @@
             class="items-center justify-between font-medium hidden w-full md:flex md:w-auto md:order-1">
             <ul x-data="{ active: 'home' }" x-init="window.addEventListener('scroll', () => {
                 let homeTop = 0;
-               
+                let profilTop = document.querySelector('#profil-desa').offsetTop - 100;
                 let umkmTop = document.querySelector('#umkm').offsetTop - 100;
             
                 {{-- if (window.scrollY >= umkmTop) {
@@ -149,7 +149,16 @@
                     </a>
                 </li>
 
-            
+                {{-- <li>
+                    <a href="#profil-desa"
+                        :class="active === 'profil-desa'
+                            ?
+                            'border-b-2 border-yellow-400 text-yellow-400' :
+                            'text-gray-900 dark:text-white'"
+                        class="block py-2 px-3 transition-colors">
+                        Profil Desa
+                    </a>
+                </li> --}}
 
                 <li>
                     <a href="#umkm"

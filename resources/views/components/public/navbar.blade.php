@@ -73,22 +73,7 @@
                         </a>
                     </li>
 
-                    <!-- Profil Desa -->
-                    {{-- <li>
-                        <a href="#profil-desa"
-                            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white 
-                   hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                            <!-- Icon Map -->
-                            <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 
-                group-hover:text-gray-900 dark:group-hover:text-white"
-                                fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M9.5 2.134a1 1 0 01.894 0l5.618 2.81a1 1 0 01.553.894v10.226a1 1 0
-                         01-1.447.894L10 14.618l-5.118 2.34A1 1 0
-                         013.5 16.064V5.838a1 1 0 01.553-.894L9.5 2.134z" clip-rule="evenodd" />
-                            </svg>
-                            <span class="ms-3">Profil Desa</span>
-                        </a>
-                    </li> --}}
+
 
                     <!-- UMKM Desa -->
                     <li>
@@ -115,19 +100,9 @@
 
         <div id="mega-menu-full"
             class="items-center justify-between font-medium hidden w-full md:flex md:w-auto md:order-1">
-            <ul x-data="{ active: 'home' }" x-init="window.addEventListener('scroll', () => {
-                let homeTop = 0;
-                let profilTop = document.querySelector('#profil-desa').offsetTop - 100;
-                let umkmTop = document.querySelector('#umkm').offsetTop - 100;
+            <ul x-data="{ active: 'home' }" x-init="const umkmTop = document.querySelector('#umkm').offsetTop - 100;
             
-                {{-- if (window.scrollY >= umkmTop) {
-                    active = 'umkm';
-                } else if (window.scrollY >= profilTop) {
-                    active = 'profil-desa';
-                } else {
-                    active = 'home';
-                } --}}
-            
+            window.addEventListener('scroll', () => {
                 if (window.scrollY >= umkmTop) {
                     active = 'umkm';
                 } else {
@@ -135,8 +110,8 @@
                 }
             });"
                 class="flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg 
-           bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 
-           md:border-0 dark:bg-gray-800 md:dark:bg-gray-800 dark:border-gray-700">
+               bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 
+               md:border-0 dark:bg-gray-800 md:dark:bg-gray-800 dark:border-gray-700">
 
                 <li>
                     <a href="{{ route('landing.home') }}"
@@ -149,17 +124,6 @@
                     </a>
                 </li>
 
-                {{-- <li>
-                    <a href="#profil-desa"
-                        :class="active === 'profil-desa'
-                            ?
-                            'border-b-2 border-yellow-400 text-yellow-400' :
-                            'text-gray-900 dark:text-white'"
-                        class="block py-2 px-3 transition-colors">
-                        Profil Desa
-                    </a>
-                </li> --}}
-
                 <li>
                     <a href="#umkm"
                         :class="active === 'umkm'
@@ -171,7 +135,6 @@
                     </a>
                 </li>
             </ul>
-
         </div>
 
         <!-- Social Media Icons -->
